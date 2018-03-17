@@ -16,6 +16,8 @@
     "console=ttyS0"
   ];
 
+  boot.tmpOnTmpfs = true;
+
   # Grow root partition and filesystem on boot so that we can store smaller EBS snapshots
   boot.growPartition = true;
   fileSystems."/".autoResize = true;
