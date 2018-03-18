@@ -6,10 +6,14 @@
     ./hardware-configuration.nix
   ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.device = "/dev/xvda";
-  boot.loader.timeout = 0;
+  boot.loader = {
+    grub = {
+      enable = true;
+      version = 2;
+      device = "/dev/xvda";
+    };
+    timeout = 0;
+  };
 
   boot.kernelParams = [
     # ttyS0 is used by AWS System Log
@@ -75,10 +79,12 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  services.openssh.enable = true;
-  services.openssh.passwordAuthentication = false;
-  services.openssh.challengeResponseAuthentication = false;
-  services.openssh.permitRootLogin = "no";
+  services.openssh = {
+    enable = true;
+    passwordAuthentication = false;
+    challengeResponseAuthentication = false;
+    permitRootLogin = "no";
+  };
 
   programs.mosh.enable = true;
 
