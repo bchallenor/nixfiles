@@ -51,6 +51,7 @@
     tree
     unzip
     vim
+    w3m
   ];
 
   programs.bash.enableCompletion = true;
