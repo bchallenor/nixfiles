@@ -70,6 +70,7 @@
     extraGroups = [ "wheel" ];
     hashedPassword = "*";
     openssh.authorizedKeys.keyFiles = [
+      keys/cloud-dev.pub
       keys/tablet-blink.pub
     ];
   };
