@@ -91,4 +91,9 @@
   programs.mosh.enable = true;
 
   services.nscd.enable = false;
+
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "overlay2";
+  };
 }

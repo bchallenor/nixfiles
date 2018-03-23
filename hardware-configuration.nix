@@ -18,6 +18,10 @@
     { device = "/dev/disk/by-label/nixos-home";
       fsType = "ext4";
     };
+  fileSystems."/var/lib/docker" =
+    { device = "/dev/disk/by-label/nixos-docker";
+      fsType = "ext4";
+    };
 
   swapDevices = [ ];
 
