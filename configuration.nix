@@ -42,6 +42,7 @@
     git
     htop
     jq
+    lsof
     ncdu
     psmisc
     ranger
