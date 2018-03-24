@@ -98,5 +98,9 @@
     storageDriver = "overlay2";
   };
 
+  nix.gc.automatic = true;
+  nix.gc.dates = "hourly";
+  nix.gc.options = "--delete-older-than 7d";
+
   system.stateVersion = "18.09";
 }
