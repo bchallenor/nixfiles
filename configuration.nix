@@ -48,6 +48,7 @@
     ranger
     ripgrep
     rsync
+    rustup
     stow
     strace
     terraform
