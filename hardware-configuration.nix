@@ -6,9 +6,11 @@
 {
   imports = [ ];
 
-  boot.initrd.availableKernelModules = [ "ata_piix" "xen_blkfront" ];
+  boot.initrd.availableKernelModules = [ "ata_piix" "ena" "nvme" "xen_blkfront" ];
   boot.kernelModules = [ ];
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = [
+    config.boot.kernelPackages.ena
+  ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-label/nixos";
