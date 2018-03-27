@@ -74,6 +74,7 @@
     openssh.authorizedKeys.keyFiles = [
       keys/cloud-dev.pub
       keys/tablet-blink.pub
+      keys/phone-termux.pub
     ];
   };
   users.groups.ben = {
