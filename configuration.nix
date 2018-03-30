@@ -99,5 +99,10 @@
     storageDriver = "overlay2";
   };
 
+  nix.extraOptions = ''
+    keep-outputs = true
+    keep-derivations = true
+  '';
+
   system.stateVersion = "18.09";
 }
