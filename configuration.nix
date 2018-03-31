@@ -6,6 +6,8 @@
     ./hardware-configuration.nix
   ];
 
+  networking.hostName = "helios";
+
   boot.loader = {
     grub = {
       enable = true;
