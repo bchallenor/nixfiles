@@ -1,6 +1,6 @@
 {
-  machineName,
-  machineSize
+  machineName ? "eos",
+  machineSize ? 1024
 }:
 let
   nixos = import <nixpkgs/nixos> {
