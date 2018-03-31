@@ -1,1 +1,2 @@
-configuration.nix
+# Only ignore the symlink in the root dir
+/configuration.nix
