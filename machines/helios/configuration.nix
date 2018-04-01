@@ -62,5 +62,17 @@
     storageDriver = "overlay2";
   };
 
+  nix.distributedBuilds = true;
+  nix.buildMachines = [
+    {
+      hostName = "eos.cloud.challenor.org";
+      sshUser = "nix";
+      sshKey = "/root/.ssh/build_rsa";
+      system = "x86_64-linux";
+      maxJobs = 4;
+      speedFactor = 4;
+    }
+  ];
+
   system.nixos.stateVersion = "18.09";
 }
