@@ -13,7 +13,7 @@
   ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-label/nixos";
+    { device = "/dev/xvda1";
       fsType = "ext4";
     };
   fileSystems."/home" =
