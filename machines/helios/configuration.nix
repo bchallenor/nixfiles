@@ -32,7 +32,10 @@
   # https://aws.amazon.com/blogs/aws/keeping-time-with-amazon-time-sync-service/
   networking.timeServers = [ "169.254.169.123" ];
 
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    supportedLocales = [ "en_US.UTF-8/UTF-8" ];
+  };
 
   time.timeZone = "UTC";
 
