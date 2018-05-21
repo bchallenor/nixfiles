@@ -8,6 +8,19 @@
 
   networking.hostName = "helios";
 
+  fileSystems."/" =
+    { device = "/dev/xvda1";
+      fsType = "ext4";
+    };
+  fileSystems."/home" =
+    { device = "/dev/disk/by-label/nixos-home";
+      fsType = "ext4";
+    };
+  fileSystems."/var/lib/docker" =
+    { device = "/dev/disk/by-label/nixos-docker";
+      fsType = "ext4";
+    };
+
   boot.loader = {
     grub = {
       enable = true;
