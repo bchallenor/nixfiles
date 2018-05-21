@@ -33,4 +33,6 @@
   # Use the time server provided by Amazon Time Sync Service
   # https://aws.amazon.com/blogs/aws/keeping-time-with-amazon-time-sync-service/
   networking.timeServers = [ "169.254.169.123" ];
+
+  time.timeZone = "UTC";
 }

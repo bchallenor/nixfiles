@@ -24,8 +24,6 @@
 
   nix.maxJobs = 4;
 
-  time.timeZone = "UTC";
-
   environment.systemPackages = with pkgs; [
     awscli
     docker
