@@ -21,6 +21,8 @@
       fsType = "ext4";
     };
 
+  nix.maxJobs = 4;
+
   boot.loader = {
     grub = {
       enable = true;
