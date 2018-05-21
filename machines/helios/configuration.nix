@@ -28,27 +28,13 @@
 
   environment.systemPackages = with pkgs; [
     awscli
-    bind
     docker
     docker_compose
-    git
-    htop
     jq
-    lsof
-    ncdu
-    psmisc
     ranger
-    ripgrep
-    rsync
     rustup
-    stow
-    strace
     terraform
-    tig
-    tmux
-    tree
     unzip
-    vim
     w3m
   ];
 
