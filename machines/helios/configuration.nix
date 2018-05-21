@@ -23,29 +23,7 @@
 
   nix.maxJobs = 4;
 
-  boot.loader = {
-    grub = {
-      enable = true;
-      version = 2;
-      device = "/dev/xvda";
-    };
-    timeout = 0;
-  };
-
-  boot.kernelParams = [
-    # ttyS0 is used by AWS System Log
-    "console=ttyS0"
-  ];
-
   boot.cleanTmpDir = true;
-
-  # Grow root partition and filesystem on boot so that we can store smaller EBS snapshots
-  boot.growPartition = true;
-  fileSystems."/".autoResize = true;
-
-  # Use the time server provided by Amazon Time Sync Service
-  # https://aws.amazon.com/blogs/aws/keeping-time-with-amazon-time-sync-service/
-  networking.timeServers = [ "169.254.169.123" ];
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
