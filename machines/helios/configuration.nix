@@ -3,7 +3,7 @@
 {
   imports = [
     <nixpkgs/nixos/modules/profiles/headless.nix>
-    ./hardware-configuration.nix
+    ../../modules/ec2.nix
   ];
 
   networking.hostName = "helios";
