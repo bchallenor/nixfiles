@@ -30,7 +30,6 @@
     docker_compose
     jq
     ranger
-    rustup
     terraform
     unzip
     w3m
