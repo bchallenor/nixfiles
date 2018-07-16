@@ -33,6 +33,7 @@
     terraform
     unzip
     w3m
+    watchexec
   ];
 
   users.mutableUsers = false;
