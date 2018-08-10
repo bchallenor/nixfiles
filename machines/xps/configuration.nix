@@ -55,6 +55,7 @@
   ];
 
   fonts.fonts = with pkgs; [
+    iosevka
     font-awesome_4
   ];
 
