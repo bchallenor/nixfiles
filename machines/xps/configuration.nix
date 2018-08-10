@@ -29,6 +29,11 @@
       fsType = "btrfs";
       options = [ "subvol=/benfs" ];
     };
+  fileSystems."/data" =
+    { device = "/dev/mapper/pool";
+      fsType = "btrfs";
+      options = [ "subvol=/datafs" ];
+    };
   fileSystems."/pool" =
     { device = "/dev/mapper/pool";
       fsType = "btrfs";
