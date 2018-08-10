@@ -40,6 +40,15 @@
       options = [ "subvol=/" ];
     };
 
+  services.snapper.configs = {
+    "benfs" = {
+      subvolume = "/pool/benfs";
+    };
+    "datafs" = {
+      subvolume = "/pool/datafs";
+    };
+  };
+
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/London";
