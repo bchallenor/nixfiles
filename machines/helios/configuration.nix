@@ -62,5 +62,5 @@
     storageDriver = "overlay2";
   };
 
-  system.nixos.stateVersion = "18.09";
+  system.stateVersion = "18.09";
 }
