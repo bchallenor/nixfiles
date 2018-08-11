@@ -104,6 +104,15 @@
     naturalScrolling = true;
   };
 
+  services.redshift = {
+    enable = true;
+    provider = "geoclue2";
+    temperature = {
+      day = 6500;
+      night = 3700;
+    };
+  };
+
   users.mutableUsers = true;
   users.users.ben = {
     uid = 1000;
