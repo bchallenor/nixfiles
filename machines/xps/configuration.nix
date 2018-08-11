@@ -66,6 +66,7 @@
     unzip
     vpnc
     watchexec
+    zathura
   ];
 
   fonts.fonts = with pkgs; [
