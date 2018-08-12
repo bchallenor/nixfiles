@@ -61,6 +61,7 @@
     jq
     pass
     ranger
+    rmlint
     rxvt_unicode
     sxiv
     terraform
