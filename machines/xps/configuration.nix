@@ -62,6 +62,7 @@
     pass
     ranger
     rxvt_unicode
+    sxiv
     terraform
     unzip
     vpnc
