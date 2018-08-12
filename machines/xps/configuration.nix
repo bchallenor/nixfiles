@@ -58,6 +58,7 @@
     chromium
     firefox
     gptfdisk
+    imagemagick
     jq
     pass
     ranger
