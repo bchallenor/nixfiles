@@ -56,6 +56,7 @@
   environment.systemPackages = with pkgs; [
     awscli
     chromium
+    file
     firefox
     gptfdisk
     imagemagick
