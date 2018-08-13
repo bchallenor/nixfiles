@@ -104,6 +104,8 @@
 
   services.xserver.libinput = {
     enable = true;
+    tapping = false;
+    clickMethod = "clickfinger";
     naturalScrolling = true;
   };
 
