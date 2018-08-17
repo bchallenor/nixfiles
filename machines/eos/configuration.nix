@@ -26,7 +26,9 @@
     createHome = true;
     home = "/home/admin";
     useDefaultShell = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+    ];
     hashedPassword = "*";
     openssh.authorizedKeys.keyFiles = [
       ../../keys/cloud-dev.pub

@@ -39,7 +39,9 @@
     createHome = true;
     home = "/home/ben";
     useDefaultShell = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+    ];
     hashedPassword = "*";
     openssh.authorizedKeys.keyFiles = [
       ../../keys/cloud-dev.pub
