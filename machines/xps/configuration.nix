@@ -62,6 +62,7 @@
     imagemagick
     jq
     pass
+    poppler_utils # pdfimages
     ranger
     rmlint
     rxvt_unicode
