@@ -61,6 +61,7 @@
     gptfdisk
     imagemagick
     jq
+    libjpeg # jpegtran
     pass
     poppler_utils # pdfimages
     ranger
