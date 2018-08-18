@@ -13,6 +13,7 @@
 
   boot.initrd.luks.devices."pool" =
     { device = "/dev/disk/by-partlabel/pool";
+      allowDiscards = true;
     };
 
   fileSystems."/" =
@@ -48,6 +49,8 @@
       subvolume = "/pool/datafs";
     };
   };
+
+  services.fstrim.enable = true;
 
   networking.networkmanager.enable = true;
 
