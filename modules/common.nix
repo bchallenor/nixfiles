@@ -12,8 +12,10 @@
     bind
     git
     htop
+    iotop
     lsof
     ncdu
+    pciutils
     psmisc
     ripgrep
     rsync
