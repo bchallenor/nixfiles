@@ -61,6 +61,7 @@
     chromium
     file
     firefox
+    freerdp
     gptfdisk
     imagemagick
     jq
