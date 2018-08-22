@@ -100,6 +100,7 @@
         i3status
         jq
         xorg.xbacklight
+        xss-lock
       ];
     };
   };
