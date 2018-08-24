@@ -8,6 +8,8 @@
 
   networking.hostName = "xps";
 
+  hardware.cpu.intel.updateMicrocode = true;
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
