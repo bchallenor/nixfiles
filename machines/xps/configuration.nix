@@ -46,9 +46,17 @@
   services.snapper.configs = {
     "benfs" = {
       subvolume = "/pool/benfs";
+      extraConfig = ''
+        TIMELINE_CREATE="yes"
+        TIMELINE_CLEANUP="yes"
+      '';
     };
     "datafs" = {
       subvolume = "/pool/datafs";
+      extraConfig = ''
+        TIMELINE_CREATE="yes"
+        TIMELINE_CLEANUP="yes"
+      '';
     };
   };
 
