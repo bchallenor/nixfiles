@@ -31,6 +31,7 @@
     ];
     hashedPassword = "*";
     openssh.authorizedKeys.keyFiles = [
+      ../../keys/laptop.pub
       ../../keys/cloud-dev.pub
       ../../keys/tablet-blink.pub
       ../../keys/phone-termux.pub
