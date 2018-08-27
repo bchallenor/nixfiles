@@ -28,6 +28,7 @@
     awscli
     docker
     docker_compose
+    gitAndTools.git-annex
     jq
     ranger
     terraform

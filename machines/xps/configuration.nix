@@ -72,6 +72,7 @@
     file
     firefox
     freerdp
+    gitAndTools.git-annex
     gptfdisk
     imagemagick
     jq
