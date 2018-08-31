@@ -85,6 +85,7 @@
     sxiv
     terraform
     unzip
+    usbutils # lsusb
     vpnc
     watchexec
     xorg.xwininfo
