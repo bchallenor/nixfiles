@@ -130,6 +130,17 @@
     naturalScrolling = true;
   };
 
+  # Workaround for broken middle mouse button
+  # Disable middle button 2 and use side button 9 in its place
+  services.xserver.config = ''
+    Section "InputClass"
+      Identifier "Logitech G602"
+      Driver "libinput"
+      MatchUSBID "046d:c537"
+      Option "ButtonMapping" "1 0 3 4 5 6 7 8 2"
+    EndSection
+  '';
+
   services.redshift = {
     enable = true;
     provider = "geoclue2";
