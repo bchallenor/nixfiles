@@ -138,6 +138,14 @@
     };
   };
 
+  services.syncthing = {
+    enable = true;
+    dataDir = "/data/config/syncthing";
+    user = "ben";
+    group = "ben";
+    openDefaultPorts = true;
+  };
+
   users.mutableUsers = true;
   users.users.ben = {
     uid = 1000;
