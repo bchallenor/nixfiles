@@ -87,6 +87,7 @@
     unzip
     vpnc
     watchexec
+    xorg.xwininfo
     zathura
   ];
 
