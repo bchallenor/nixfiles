@@ -159,6 +159,11 @@
 
   security.sudo.wheelNeedsPassword = true;
 
+  programs.ssh = {
+    startAgent = true;
+    agentTimeout = "1h";
+  };
+
   virtualisation.docker = {
     enable = true;
     storageDriver = "overlay2";
