@@ -118,7 +118,12 @@
     };
   };
 
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      hplip
+    ];
+  };
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
