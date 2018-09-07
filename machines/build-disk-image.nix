@@ -29,7 +29,7 @@ let
 
   machineDiskImage = mkDiskImage {
     inherit lib pkgs;
-    name = "${machineName}-${machineConfigDir.src.shortRev}-disk-image";
+    name = "${machineName}-${machineConfigDir.src.shortRev}";
     config = machineConfig;
     contents = [
       # rsync needs trailing slash
