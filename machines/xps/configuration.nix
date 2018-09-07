@@ -136,6 +136,15 @@
   };
 
   services.xserver.config = ''
+    # Internal keyboard has a right ctrl but no right win
+    # Swap them, because having a right win is more useful for i3
+    Section "InputClass"
+      Identifier "Internal Keyboard"
+      Driver "libinput"
+      MatchProduct "AT Translated Set 2 keyboard"
+      Option "XkbOptions" "ctrl:swap_rwin_rctl"
+    EndSection
+
     # Workaround for broken middle mouse button
     # Disable middle button 2 and use side button 9 in its place
     Section "InputClass"
