@@ -135,9 +135,9 @@
     naturalScrolling = true;
   };
 
-  # Workaround for broken middle mouse button
-  # Disable middle button 2 and use side button 9 in its place
   services.xserver.config = ''
+    # Workaround for broken middle mouse button
+    # Disable middle button 2 and use side button 9 in its place
     Section "InputClass"
       Identifier "Logitech G602"
       Driver "libinput"
