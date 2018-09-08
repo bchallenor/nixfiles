@@ -10,7 +10,7 @@
   networking.hostName = "nyx";
 
   fileSystems."/" =
-    { device = "/dev/xvda1";
+    { device = "/dev/disk/by-label/nixos";
       fsType = "ext4";
     };
 
