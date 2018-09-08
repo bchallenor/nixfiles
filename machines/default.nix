@@ -23,9 +23,7 @@ let
   ];
 
 in
-  pkgs.linkFarm "images" (
-    map (image: {
-      name = image.name + ".img";
-      path = image + /nixos.img;
-    }) images
-  )
+  pkgs.symlinkJoin {
+    name = "images";
+    paths = images;
+  }

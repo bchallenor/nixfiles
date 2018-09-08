@@ -41,4 +41,7 @@ let
     format = "raw";
   };
 in
-  machineDiskImage
+  pkgs.linkFarm "image" [{
+    name = machineDiskImage.name + ".img";
+    path = machineDiskImage + /nixos.img;
+  }]
