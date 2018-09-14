@@ -9,11 +9,6 @@
 
   networking.hostName = "nyx";
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/nixos";
-      fsType = "ext4";
-    };
-
   nix.maxJobs = 2;
 
   environment.systemPackages = with pkgs; [

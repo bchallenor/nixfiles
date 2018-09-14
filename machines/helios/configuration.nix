@@ -13,10 +13,6 @@ in
 
   networking.hostName = "helios";
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/nixos";
-      fsType = "ext4";
-    };
   fileSystems."/home" =
     { device = "/dev/disk/by-label/nixos-home";
       fsType = "ext4";

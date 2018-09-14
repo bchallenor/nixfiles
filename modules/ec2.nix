@@ -28,7 +28,12 @@
 
   # Grow root partition and filesystem on boot so that we can store smaller EBS snapshots
   boot.growPartition = true;
-  fileSystems."/".autoResize = true;
+
+  fileSystems."/" =
+    { device = "/dev/disk/by-label/nixos";
+      fsType = "ext4";
+      autoResize = true;
+    };
 
   # Use the time server provided by Amazon Time Sync Service
   # https://aws.amazon.com/blogs/aws/keeping-time-with-amazon-time-sync-service/

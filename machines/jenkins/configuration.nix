@@ -13,10 +13,6 @@ in
 
   networking.hostName = "jenkins";
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/nixos";
-      fsType = "ext4";
-    };
   fileSystems."${config.services.jenkins.home}" =
     { device = "/dev/disk/by-label/jenkins";
       fsType = "ext4";
