@@ -70,7 +70,7 @@ in
 
   time.timeZone = "Europe/London";
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     awscli
     chromium
     file
@@ -87,14 +87,15 @@ in
     rmlint
     rxvt_unicode
     sxiv
-    terraform
     unzip
     usbutils # lsusb
     vpnc
     watchexec
     xorg.xwininfo
     zathura
-  ];
+  ]) ++ (with unstable.pkgs; [
+    terraform
+  ]);
 
   fonts.fonts = with pkgs; [
     iosevka
