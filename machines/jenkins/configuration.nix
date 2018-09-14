@@ -33,6 +33,7 @@ in
     port = 5365;
     package = unstable.jenkins;
     packages = with pkgs; [
+      awscli
       coreutils
       git
       gnutar
