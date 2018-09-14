@@ -55,6 +55,4 @@
   };
 
   security.sudo.wheelNeedsPassword = false;
-
-  system.stateVersion = "18.09";
 }

@@ -215,6 +215,4 @@ in
     enable = true;
     storageDriver = "overlay2";
   };
-
-  system.stateVersion = "18.03";
 }

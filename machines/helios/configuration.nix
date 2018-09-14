@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+let
+  unstable = import <nixpkgs-unstable> {};
+in
+
 {
   imports = [
     <nixpkgs/nixos/modules/profiles/headless.nix>
@@ -20,18 +24,19 @@
 
   nix.maxJobs = 2;
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     awscli
     docker
     docker_compose
     gitAndTools.git-annex
     jq
     ranger
-    terraform
     unzip
     w3m
     watchexec
-  ];
+  ]) ++ (with unstable.pkgs; [
+    terraform
+  ]);
 
   users.mutableUsers = false;
   users.users.ben = {
@@ -61,6 +66,4 @@
     enable = true;
     storageDriver = "overlay2";
   };
-
-  system.stateVersion = "18.09";
 }

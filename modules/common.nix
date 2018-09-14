@@ -40,8 +40,16 @@
 
   services.nscd.enable = false;
 
+  nix.nixPath = [
+    "nixpkgs=channel:nixos-${config.system.stateVersion}"
+    "nixpkgs-unstable=channel:nixos-unstable"
+    "nixos-config=/etc/nixos/configuration.nix"
+  ];
+
   nix.extraOptions = ''
     keep-outputs = true
     keep-derivations = true
   '';
+
+  system.stateVersion = "18.03";
 }
