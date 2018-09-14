@@ -94,6 +94,7 @@ in
     xorg.xwininfo
     zathura
   ]) ++ (with unstable.pkgs; [
+    img2pdf # not available in stable
     terraform
   ]);
 
