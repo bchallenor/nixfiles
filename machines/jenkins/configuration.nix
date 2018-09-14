@@ -9,6 +9,7 @@ in
     <nixpkgs/nixos/modules/profiles/headless.nix>
     ../../modules/common.nix
     ../../modules/ec2.nix
+    ../../modules/persistent-secrets.nix
   ];
 
   networking.hostName = "jenkins";
