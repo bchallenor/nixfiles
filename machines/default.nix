@@ -11,6 +11,12 @@ in {
     machineSize = 2048;
   };
 
+  aegis = buildMachineImage {
+    inherit nixpkgs;
+    machineName = "aegis";
+    machineSize = 2048;
+  };
+
   jenkins = buildMachineImage {
     inherit nixpkgs;
     machineName = "jenkins";
