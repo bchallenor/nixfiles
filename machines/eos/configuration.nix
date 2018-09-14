@@ -14,7 +14,7 @@
       fsType = "ext4";
     };
 
-  nix.maxJobs = 1;
+  nix.maxJobs = 2;
 
   environment.systemPackages = with pkgs; [
   ];

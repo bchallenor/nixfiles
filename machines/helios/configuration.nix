@@ -18,7 +18,7 @@
       fsType = "ext4";
     };
 
-  nix.maxJobs = 4;
+  nix.maxJobs = 2;
 
   environment.systemPackages = with pkgs; [
     awscli
