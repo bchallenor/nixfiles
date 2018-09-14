@@ -169,6 +169,20 @@ in
     };
   };
 
+  services.jenkins = {
+    enable = true;
+    listenAddress = "127.0.0.1";
+    port = 5365;
+    package = unstable.jenkins;
+    packages = with pkgs; [
+      coreutils
+      git
+      gnutar
+      nix
+      xz
+    ];
+  };
+
   users.mutableUsers = true;
   users.users.ben = {
     uid = 1000;
