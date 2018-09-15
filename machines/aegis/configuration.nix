@@ -10,6 +10,7 @@ in
     ../../modules/common.nix
     ../../modules/ec2.nix
     ../../modules/persistent-secrets.nix
+    ../../modules/wireguard-unstable.nix
   ];
 
   networking.hostName = "aegis";

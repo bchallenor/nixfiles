@@ -8,6 +8,7 @@ in
   imports = [
     ./hardware-configuration.nix
     ../../modules/common.nix
+    ../../modules/wireguard-unstable.nix
   ];
 
   networking.hostName = "xps";
