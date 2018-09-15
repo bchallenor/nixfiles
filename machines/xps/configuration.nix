@@ -41,6 +41,11 @@ in
       fsType = "btrfs";
       options = [ "subvol=/datafs" ];
     };
+  fileSystems."/secrets" =
+    { device = "/dev/mapper/pool";
+      fsType = "btrfs";
+      options = [ "subvol=/secretsfs" ];
+    };
   fileSystems."/pool" =
     { device = "/dev/mapper/pool";
       fsType = "btrfs";
@@ -57,6 +62,13 @@ in
     };
     "datafs" = {
       subvolume = "/pool/datafs";
+      extraConfig = ''
+        TIMELINE_CREATE="yes"
+        TIMELINE_CLEANUP="yes"
+      '';
+    };
+    "secretsfs" = {
+      subvolume = "/pool/secretsfs";
       extraConfig = ''
         TIMELINE_CREATE="yes"
         TIMELINE_CLEANUP="yes"
