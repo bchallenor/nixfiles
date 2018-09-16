@@ -15,6 +15,9 @@ in
 
   networking.hostName = "aegis";
 
+  # TODO: move to wireguard module
+  networking.firewall.allowedUDPPorts = [ 51820 ];
+
   nix.maxJobs = 2;
 
   environment.systemPackages = with pkgs; [
