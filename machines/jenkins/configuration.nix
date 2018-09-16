@@ -14,6 +14,8 @@ in
 
   networking.hostName = "jenkins";
 
+  networking.firewall.allowedTCPPorts = [ config.services.jenkins.port ];
+
   fileSystems."${config.services.jenkins.home}" =
     { device = "/dev/disk/by-label/jenkins";
       fsType = "ext4";
