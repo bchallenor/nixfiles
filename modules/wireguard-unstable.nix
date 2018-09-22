@@ -5,6 +5,10 @@
     "services/networking/wireguard.nix"
   ];
 
+  imports = [
+    <nixpkgs-unstable/nixos/modules/services/networking/wireguard.nix>
+  ];
+
   nixpkgs.overlays = [
     (final: previous: {
       wireguard-tools = previous.callPackage <nixpkgs-unstable/pkgs/tools/networking/wireguard-tools> { };

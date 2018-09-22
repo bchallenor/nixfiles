@@ -214,4 +214,19 @@ in
     enable = true;
     storageDriver = "overlay2";
   };
+
+  networking.wireguard.interfaces = {
+    wg0 = {
+      ips = [ "fd00::2/128" ];
+      privateKeyFile = "/secrets/wg/privatekey";
+      peers = [{
+        endpoint = "aegis.cloud.challenor.org:51820";
+        allowedIPs = [
+          "2a05:d018:ed3:1200::/56"
+          "fd00::/64"
+        ];
+        publicKey = "F9rBC9avB9VPDL2UeFTr/NHySfB/YgGSNe9ve0xN6TI=";
+      }];
+    };
+  };
 }

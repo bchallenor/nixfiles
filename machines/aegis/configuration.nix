@@ -16,7 +16,7 @@ in
   networking.hostName = "aegis";
 
   # TODO: move to wireguard module
-  networking.firewall.allowedUDPPorts = [ 51820 ];
+  networking.firewall.allowedUDPPorts = [ config.networking.wireguard.interfaces.wg0.listenPort ];
 
   nix.maxJobs = 2;
 
@@ -44,4 +44,23 @@ in
   };
 
   security.sudo.wheelNeedsPassword = false;
+
+  networking.wireguard.interfaces = {
+    wg0 = {
+      ips = [ "fd00::1/64" ];
+      listenPort = 51820;
+      privateKeyFile = "/secrets/wg/privatekey";
+      postSetup = ''
+        ${pkgs.procps}/bin/sysctl net.ipv6.conf.all.forwarding=1
+      '';
+      postShutdown = ''
+        ${pkgs.procps}/bin/sysctl net.ipv6.conf.all.forwarding=0
+      '';
+      peers = [{
+        # xps
+        allowedIPs = [ "fd00::2/128" ];
+        publicKey = "FqhS4e0UeFFoctTXzww8G7g9qWOTvobttarIhc84jiE=";
+      }];
+    };
+  };
 }
