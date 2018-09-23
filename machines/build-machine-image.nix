@@ -27,6 +27,10 @@ let
     configuration = import (machineConfigDir + /configuration.nix);
   }).config;
 
+  machineSystemHash = builtins.elemAt (
+    builtins.match "/nix/store/([a-z0-9]+)-.*" machineConfig.system.build.toplevel.outPath
+  ) 0;
+
   machineDiskImage = mkDiskImage {
     inherit lib pkgs;
     name = machineName;
@@ -41,7 +45,7 @@ let
     format = "raw";
   };
 
-  machineDiskImageFileName = "${machineName}-${machineConfigDir.src.shortRev}.img";
+  machineDiskImageFileName = "${machineName}-${machineSystemHash}.img";
 in
   pkgs.linkFarm machineDiskImageFileName [{
     name = machineDiskImageFileName;
