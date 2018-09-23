@@ -17,6 +17,12 @@ in {
     machineSize = 2048;
   };
 
+  nat = buildMachineImage {
+    inherit nixpkgs;
+    machineName = "nat";
+    machineSize = 2048;
+  };
+
   jenkins = buildMachineImage {
     inherit nixpkgs;
     machineName = "jenkins";
