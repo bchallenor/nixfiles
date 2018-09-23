@@ -29,7 +29,7 @@ let
 
   machineDiskImage = mkDiskImage {
     inherit lib pkgs;
-    name = "${machineName}-${machineConfigDir.src.shortRev}";
+    name = machineName;
     config = machineConfig;
     contents = [
       # rsync needs trailing slash
@@ -40,8 +40,10 @@ let
     fsType = "ext4";
     format = "raw";
   };
+
+  machineDiskImageFileName = "${machineName}-${machineConfigDir.src.shortRev}.img";
 in
-  pkgs.linkFarm "image" [{
-    name = machineDiskImage.name + ".img";
+  pkgs.linkFarm machineDiskImageFileName [{
+    name = machineDiskImageFileName;
     path = machineDiskImage + /nixos.img;
   }]
