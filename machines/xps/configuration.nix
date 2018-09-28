@@ -108,6 +108,7 @@ in
     zathura
   ]) ++ (with unstable.pkgs; [
     img2pdf # not available in stable
+    python3.pkgs.black # not available in stable
     terraform
   ]);
 
