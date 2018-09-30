@@ -17,7 +17,4 @@
       });
     })
   ];
-
-  boot.extraModulePackages = [ pkgs.linuxPackages.wireguard ];
-  environment.systemPackages = [ pkgs.wireguard-tools ];
 }
