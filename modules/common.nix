@@ -1,6 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
+  imports = [
+    ./clone-nixos-config.nix
+  ];
+
   boot.cleanTmpDir = true;
 
   i18n = {
