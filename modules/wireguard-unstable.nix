@@ -17,4 +17,16 @@
       });
     })
   ];
+
+  systemd.services.wireguard-wg0 = {
+    after = [ "secrets.mount" ];
+    requires = [ "secrets.mount" ];
+  };
+
+  assertions = [
+    {
+      assertion = config.fileSystems ? "/secrets";
+      message = "wireguard requires /secrets mount";
+    }
+  ];
 }
