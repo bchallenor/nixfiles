@@ -36,4 +36,35 @@
   };
 
   security.sudo.wheelNeedsPassword = false;
+
+  systemd.network = {
+    enable = true;
+
+    networks = {
+      public = {
+        enable = true;
+        extraConfig = ''
+          [Match]
+          Name=ens5
+
+          [Network]
+          DHCP=ipv4
+          IPForward=ipv4
+        '';
+      };
+
+      private = {
+        enable = true;
+        extraConfig = ''
+          [Match]
+          Name=ens6
+
+          [Network]
+          DHCP=ipv4
+          IPForward=ipv4
+          IPMasquerade=yes
+        '';
+      };
+    };
+  };
 }
