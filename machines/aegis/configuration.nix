@@ -51,10 +51,12 @@ in
       listenPort = 51820;
       privateKeyFile = "/secrets/wg/privatekey";
       postSetup = ''
+        ${pkgs.procps}/bin/sysctl net.ipv6.conf.all.accept_ra=2
         ${pkgs.procps}/bin/sysctl net.ipv6.conf.all.forwarding=1
       '';
       postShutdown = ''
         ${pkgs.procps}/bin/sysctl net.ipv6.conf.all.forwarding=0
+        ${pkgs.procps}/bin/sysctl net.ipv6.conf.all.accept_ra=1
       '';
       peers = [{
         # xps
