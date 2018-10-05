@@ -45,19 +45,43 @@ in
 
   security.sudo.wheelNeedsPassword = false;
 
+  systemd.network = {
+    enable = true;
+
+    networks = {
+      public = {
+        enable = true;
+        extraConfig = ''
+          [Match]
+          Name=ens5
+
+          [Network]
+          DHCP=ipv4
+          IPForward=ipv6
+          IPv6AcceptRA=true
+        '';
+      };
+
+      private = {
+        enable = true;
+        extraConfig = ''
+          [Match]
+          Name=ens6
+
+          [Network]
+          DHCP=no
+          IPForward=ipv6
+          IPv6AcceptRA=true
+        '';
+      };
+    };
+  };
+
   networking.wireguard.interfaces = {
     wg0 = {
       ips = [ "fd00::1/64" ];
       listenPort = 51820;
       privateKeyFile = "/secrets/wg/privatekey";
-      postSetup = ''
-        ${pkgs.procps}/bin/sysctl net.ipv6.conf.default.accept_ra=2 net.ipv6.conf.all.accept_ra=2
-        ${pkgs.procps}/bin/sysctl net.ipv6.conf.all.forwarding=1
-      '';
-      postShutdown = ''
-        ${pkgs.procps}/bin/sysctl net.ipv6.conf.all.forwarding=0
-        ${pkgs.procps}/bin/sysctl net.ipv6.conf.default.accept_ra=1 net.ipv6.conf.all.accept_ra=1
-      '';
       peers = [{
         # xps
         allowedIPs = [ "fd00::2/128" ];
