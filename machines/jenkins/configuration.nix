@@ -36,6 +36,7 @@ in
       git
       gnutar
       nix
+      sbt
       xz
     ];
   };
