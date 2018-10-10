@@ -55,5 +55,5 @@
     keep-derivations = true
   '';
 
-  system.stateVersion = "18.03";
+  system.stateVersion = "18.09";
 }
