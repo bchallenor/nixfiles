@@ -95,6 +95,7 @@ in
     imagemagick
     jq
     libjpeg # jpegtran
+    openjdk8
     pass
     poppler_utils # pdfimages
     ranger
