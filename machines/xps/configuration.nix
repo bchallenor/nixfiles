@@ -9,6 +9,7 @@ in
     ./hardware-configuration.nix
     ../../modules/common.nix
     ../../modules/wireguard-unstable.nix
+    ../../modules/redshift.nix
   ];
 
   networking.hostName = "xps";
@@ -175,15 +176,6 @@ in
       Option "ButtonMapping" "1 0 3 4 5 6 7 8 2"
     EndSection
   '';
-
-  services.redshift = {
-    enable = true;
-    provider = "geoclue2";
-    temperature = {
-      day = 6500;
-      night = 3700;
-    };
-  };
 
   users.mutableUsers = true;
   users.users.ben = {
