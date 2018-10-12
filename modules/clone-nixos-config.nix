@@ -6,18 +6,8 @@ let
   uid = 1000;
   gid = 1000;
 
-  getGitConfigKey = key: builtins.readFile (
-    pkgs.runCommand "git-config-${key}" {
-      preferLocalBuild = true;
-      nativeBuildInputs = with pkgs; [ git ];
-      gitConfigFile = "${nixosConfigDir}/.git/config";
-    } ''
-      git config --file $gitConfigFile --get ${key} >$out
-    ''
-  );
-
-  originUrl = getGitConfigKey "remote.origin.url";
-  originPushUrl = getGitConfigKey "remote.origin.pushurl";
+  originUrl = "https://github.com/bchallenor/nixos-config.git";
+  originPushUrl = "git@github.com:bchallenor/nixos-config.git";
 in
 {
   systemd.services.chown-nixos-config =
