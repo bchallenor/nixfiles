@@ -18,10 +18,10 @@ in
 
   systemd.user.services.redshift =
   {
-    script = ''
-      ${pkgs.redshift}/bin/redshift -c ${configFile}
-    '';
     serviceConfig = {
+      ExecStart = ''
+        ${pkgs.redshift}/bin/redshift -c ${configFile}
+      '';
       ProtectSystem = "strict";
       Restart = "always";
     };
