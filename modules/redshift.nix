@@ -9,8 +9,8 @@ let
     [redshift]
     temp-day=6500
     temp-night=3700
-    dawn-time=07:00
-    dusk-time=19:00
+    dawn-time=08:00
+    dusk-time=18:00
   '';
 in
 {
