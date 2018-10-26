@@ -112,7 +112,12 @@ in
     img2pdf # not available in stable
     jetbrains.idea-community
     python3.pkgs.black # not available in stable
-    terraform
+    (terraform.withPlugins(ps: with ps; [
+      archive
+      aws
+      external
+      http
+    ]))
   ]);
 
   fonts.fonts = with pkgs; [

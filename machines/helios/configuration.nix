@@ -31,7 +31,12 @@ in
     w3m
     watchexec
   ]) ++ (with unstable.pkgs; [
-    terraform
+    (terraform.withPlugins(ps: with ps; [
+      archive
+      aws
+      external
+      http
+    ]))
   ]);
 
   users.mutableUsers = false;
