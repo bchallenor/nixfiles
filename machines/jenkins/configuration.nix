@@ -33,6 +33,7 @@ in
     packages = with pkgs; [
       awscli
       coreutils
+      curl
       git
       gnutar
       jq
