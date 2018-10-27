@@ -35,6 +35,7 @@ in
       coreutils
       git
       gnutar
+      jq
       nix
       sbt
       xz
