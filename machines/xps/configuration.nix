@@ -93,11 +93,13 @@ in
     gitAndTools.git-annex
     gptfdisk
     imagemagick
+    img2pdf
     jq
     libjpeg # jpegtran
     openjdk8
     pass
     poppler_utils # pdfimages
+    python3.pkgs.black
     ranger
     rmlint
     rxvt_unicode
@@ -109,9 +111,7 @@ in
     xorg.xwininfo
     zathura
   ]) ++ (with unstable.pkgs; [
-    img2pdf # not available in stable
     jetbrains.idea-community
-    python3.pkgs.black # not available in stable
     (terraform.withPlugins(ps: with ps; [
       archive
       aws
