@@ -91,6 +91,7 @@ in
     firefox
     freerdp
     gitAndTools.git-annex
+    gnupg
     gptfdisk
     imagemagick
     img2pdf
