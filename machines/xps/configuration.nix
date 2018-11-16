@@ -48,7 +48,7 @@ in
       fsType = "btrfs";
       options = [ "subvol=/secretsfs" ];
     };
-  fileSystems."/pool" =
+  fileSystems."/mnt/pool" =
     { device = "/dev/mapper/pool";
       fsType = "btrfs";
       options = [ "subvol=/" ];
@@ -56,21 +56,21 @@ in
 
   services.snapper.configs = {
     "benfs" = {
-      subvolume = "/pool/benfs";
+      subvolume = "/mnt/pool/benfs";
       extraConfig = ''
         TIMELINE_CREATE="yes"
         TIMELINE_CLEANUP="yes"
       '';
     };
     "datafs" = {
-      subvolume = "/pool/datafs";
+      subvolume = "/mnt/pool/datafs";
       extraConfig = ''
         TIMELINE_CREATE="yes"
         TIMELINE_CLEANUP="yes"
       '';
     };
     "secretsfs" = {
-      subvolume = "/pool/secretsfs";
+      subvolume = "/mnt/pool/secretsfs";
       extraConfig = ''
         TIMELINE_CREATE="yes"
         TIMELINE_CLEANUP="yes"
