@@ -23,6 +23,10 @@ in
     { device = "/dev/disk/by-partlabel/pool";
       allowDiscards = true;
     };
+  boot.initrd.luks.devices."epool" =
+    { device = "/dev/disk/by-partlabel/epool";
+      allowDiscards = true;
+    };
 
   fileSystems."/" =
     { device = "/dev/mapper/pool";
@@ -52,6 +56,10 @@ in
     { device = "/dev/mapper/pool";
       fsType = "btrfs";
       options = [ "subvol=/" ];
+    };
+  fileSystems."/mnt/epool" =
+    { device = "/dev/mapper/epool";
+      fsType = "ext4";
     };
 
   services.snapper.configs = {
