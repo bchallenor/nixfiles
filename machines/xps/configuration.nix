@@ -108,6 +108,7 @@ in
     openjdk8
     pass
     poppler_utils # pdfimages
+    python3
     python3.pkgs.black
     ranger
     rmlint
