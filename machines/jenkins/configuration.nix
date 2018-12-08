@@ -40,6 +40,7 @@ in
       nix
       (python3.withPackages(ps: [ ps.boto3 ]))
       sbt
+      skopeo
       xz
     ];
   };
