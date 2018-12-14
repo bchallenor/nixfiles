@@ -1,0 +1,5 @@
+--- a/config.def.h
++++ b/config.def.h
+@@ -60 +60 @@
+-static const int thumb_sizes[] = { 32, 64, 96, 128, 160 };
++static const int thumb_sizes[] = { 64, 128, 256, 384, 512 };
