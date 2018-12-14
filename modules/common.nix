@@ -3,6 +3,7 @@
 {
   imports = [
     ./clone-nixos-config.nix
+    ./overlays.nix
   ];
 
   boot.cleanTmpDir = true;
