@@ -113,6 +113,7 @@ in
     ranger
     rmlint
     rxvt_unicode
+    shellcheck
     sxiv
     unzip
     usbutils # lsusb
