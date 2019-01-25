@@ -14,6 +14,16 @@ let
   '';
 in
 {
+  nixpkgs.overlays = [
+   (self: super: {
+      redshift = super.redshift.override {
+        # Avoid dep on network-manager
+        # TODO(19.03) withGeolocation
+        withGeoclue = false;
+      };
+    })
+  ];
+
   environment.systemPackages = with pkgs; [ redshift ];
 
   systemd.user.services.redshift =
