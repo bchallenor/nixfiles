@@ -14,6 +14,10 @@
       "en_GB.UTF-8/UTF-8"
       "en_US.UTF-8/UTF-8"
     ];
+    consolePackages = with pkgs; [
+      terminus_font
+    ];
+    consoleFont = "ter-132n";
   };
 
   environment.systemPackages = with pkgs; [
