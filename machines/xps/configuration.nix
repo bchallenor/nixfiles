@@ -105,6 +105,7 @@ in
     img2pdf
     jq
     libjpeg # jpegtran
+    libxml2 # xmllint
     openjdk8
     pass
     poppler_utils # pdfimages
