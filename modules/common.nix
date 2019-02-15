@@ -6,7 +6,7 @@
     ./overlays.nix
   ];
 
-  boot.cleanTmpDir = true;
+  boot.tmpOnTmpfs = true;
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
