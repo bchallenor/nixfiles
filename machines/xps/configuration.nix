@@ -152,6 +152,7 @@ in
         i3lock
         i3status
         jq
+        xdotool
         xorg.xbacklight
         xss-lock
       ];
