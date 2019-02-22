@@ -98,7 +98,6 @@ in
     file
     firefox
     freerdp
-    gitAndTools.git-annex
     gnupg
     gptfdisk
     imagemagick
@@ -123,6 +122,7 @@ in
     xorg.xwininfo
     zathura
   ]) ++ (with unstable.pkgs; [
+    gitAndTools.git-annex
     jetbrains.idea-community
     (terraform.withPlugins(ps: with ps; [
       archive
