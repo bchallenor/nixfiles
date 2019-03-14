@@ -23,8 +23,8 @@ in
     { device = "/dev/disk/by-partlabel/pool";
       allowDiscards = true;
     };
-  boot.initrd.luks.devices."epool" =
-    { device = "/dev/disk/by-partlabel/epool";
+  boot.initrd.luks.devices."lvm" =
+    { device = "/dev/disk/by-partlabel/lvm";
       allowDiscards = true;
     };
   boot.initrd.luks.reusePassphrases = false;
@@ -59,7 +59,7 @@ in
       options = [ "subvol=/" ];
     };
   fileSystems."/mnt/epool" =
-    { device = "/dev/mapper/epool";
+    { device = "/dev/vg/epool";
       fsType = "ext4";
     };
 
