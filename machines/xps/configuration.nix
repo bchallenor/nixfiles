@@ -27,6 +27,7 @@ in
     { device = "/dev/disk/by-partlabel/epool";
       allowDiscards = true;
     };
+  boot.initrd.luks.reusePassphrases = false;
 
   fileSystems."/" =
     { device = "/dev/mapper/pool";
