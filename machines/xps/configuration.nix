@@ -52,6 +52,10 @@ in
     { device = "/dev/vg/secrets";
       fsType = "ext4";
     };
+  fileSystems."/var/lib/docker" =
+    { device = "/dev/vg/docker";
+      fsType = "ext4";
+    };
   fileSystems."/mnt/pool" =
     { device = "/dev/mapper/pool";
       fsType = "btrfs";
