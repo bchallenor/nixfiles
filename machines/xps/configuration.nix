@@ -48,9 +48,14 @@ in
       options = [ "subvol=/" ];
     };
   fileSystems."/data" =
-    { device = "/dev/mapper/pool";
+    { device = "/dev/vg/data";
       fsType = "btrfs";
-      options = [ "subvol=/datafs" ];
+      options = [ "subvol=/main" ];
+    };
+  fileSystems."/mnt/btrfs/data" =
+    { device = "/dev/vg/data";
+      fsType = "btrfs";
+      options = [ "subvol=/" ];
     };
   fileSystems."/secrets" =
     { device = "/dev/vg/secrets";
@@ -82,8 +87,8 @@ in
         TIMELINE_CLEANUP="yes"
       '';
     };
-    "datafs" = {
-      subvolume = "/mnt/pool/datafs";
+    "data" = {
+      subvolume = "/mnt/btrfs/data/main";
       extraConfig = ''
         TIMELINE_CREATE="yes"
         TIMELINE_CLEANUP="yes"
