@@ -19,10 +19,6 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."pool" =
-    { device = "/dev/disk/by-partlabel/pool";
-      allowDiscards = true;
-    };
   boot.initrd.luks.devices."lvm" =
     { device = "/dev/disk/by-partlabel/lvm";
       allowDiscards = true;
@@ -68,11 +64,6 @@ in
   fileSystems."/var/lib/docker" =
     { device = "/dev/vg/docker";
       fsType = "ext4";
-    };
-  fileSystems."/mnt/pool" =
-    { device = "/dev/mapper/pool";
-      fsType = "btrfs";
-      options = [ "subvol=/" ];
     };
   fileSystems."/mnt/epool" =
     { device = "/dev/vg/epool";
