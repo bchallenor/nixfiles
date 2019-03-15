@@ -39,9 +39,14 @@ in
       fsType = "vfat";
     };
   fileSystems."/home/ben" =
-    { device = "/dev/mapper/pool";
+    { device = "/dev/vg/ben";
       fsType = "btrfs";
-      options = [ "subvol=/benfs" ];
+      options = [ "subvol=/main" ];
+    };
+  fileSystems."/mnt/btrfs/ben" =
+    { device = "/dev/vg/ben";
+      fsType = "btrfs";
+      options = [ "subvol=/" ];
     };
   fileSystems."/data" =
     { device = "/dev/mapper/pool";
@@ -71,8 +76,8 @@ in
     };
 
   services.snapper.configs = {
-    "benfs" = {
-      subvolume = "/mnt/pool/benfs";
+    "ben" = {
+      subvolume = "/mnt/btrfs/ben/main";
       extraConfig = ''
         TIMELINE_CREATE="yes"
         TIMELINE_CLEANUP="yes"
