@@ -52,6 +52,10 @@ in
     { device = "/dev/vg/secrets";
       fsType = "ext4";
     };
+  fileSystems."/mnt/annex" =
+    { device = "/dev/vg/annex";
+      fsType = "ext4";
+    };
   fileSystems."/var/lib/docker" =
     { device = "/dev/vg/docker";
       fsType = "ext4";
