@@ -19,67 +19,67 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."pool" =
-    { device = "/dev/disk/by-partlabel/pool";
-      allowDiscards = true;
-    };
-  boot.initrd.luks.devices."epool" =
-    { device = "/dev/disk/by-partlabel/epool";
+  boot.initrd.luks.devices."lvm" =
+    { device = "/dev/disk/by-partlabel/lvm";
       allowDiscards = true;
     };
   boot.initrd.luks.reusePassphrases = false;
 
   fileSystems."/" =
-    { device = "/dev/mapper/pool";
-      fsType = "btrfs";
-      options = [ "subvol=/nixfs" ];
+    { device = "/dev/vg/nixos";
+      fsType = "ext4";
     };
   fileSystems."/boot" =
     { device = "/dev/disk/by-partlabel/efi";
       fsType = "vfat";
     };
   fileSystems."/home/ben" =
-    { device = "/dev/mapper/pool";
+    { device = "/dev/vg/ben";
       fsType = "btrfs";
-      options = [ "subvol=/benfs" ];
+      options = [ "subvol=/main" ];
     };
-  fileSystems."/data" =
-    { device = "/dev/mapper/pool";
-      fsType = "btrfs";
-      options = [ "subvol=/datafs" ];
-    };
-  fileSystems."/secrets" =
-    { device = "/dev/mapper/pool";
-      fsType = "btrfs";
-      options = [ "subvol=/secretsfs" ];
-    };
-  fileSystems."/mnt/pool" =
-    { device = "/dev/mapper/pool";
+  fileSystems."/mnt/btrfs/ben" =
+    { device = "/dev/vg/ben";
       fsType = "btrfs";
       options = [ "subvol=/" ];
     };
+  fileSystems."/data" =
+    { device = "/dev/vg/data";
+      fsType = "btrfs";
+      options = [ "subvol=/main" ];
+    };
+  fileSystems."/mnt/btrfs/data" =
+    { device = "/dev/vg/data";
+      fsType = "btrfs";
+      options = [ "subvol=/" ];
+    };
+  fileSystems."/secrets" =
+    { device = "/dev/vg/secrets";
+      fsType = "ext4";
+    };
+  fileSystems."/mnt/annex" =
+    { device = "/dev/vg/annex";
+      fsType = "ext4";
+    };
+  fileSystems."/var/lib/docker" =
+    { device = "/dev/vg/docker";
+      fsType = "ext4";
+    };
   fileSystems."/mnt/epool" =
-    { device = "/dev/mapper/epool";
+    { device = "/dev/vg/epool";
       fsType = "ext4";
     };
 
   services.snapper.configs = {
-    "benfs" = {
-      subvolume = "/mnt/pool/benfs";
+    "ben" = {
+      subvolume = "/mnt/btrfs/ben/main";
       extraConfig = ''
         TIMELINE_CREATE="yes"
         TIMELINE_CLEANUP="yes"
       '';
     };
-    "datafs" = {
-      subvolume = "/mnt/pool/datafs";
-      extraConfig = ''
-        TIMELINE_CREATE="yes"
-        TIMELINE_CLEANUP="yes"
-      '';
-    };
-    "secretsfs" = {
-      subvolume = "/mnt/pool/secretsfs";
+    "data" = {
+      subvolume = "/mnt/btrfs/data/main";
       extraConfig = ''
         TIMELINE_CREATE="yes"
         TIMELINE_CLEANUP="yes"
