@@ -30,9 +30,8 @@ in
   boot.initrd.luks.reusePassphrases = false;
 
   fileSystems."/" =
-    { device = "/dev/mapper/pool";
-      fsType = "btrfs";
-      options = [ "subvol=/nixfs" ];
+    { device = "/dev/vg/nixos";
+      fsType = "ext4";
     };
   fileSystems."/boot" =
     { device = "/dev/disk/by-partlabel/efi";
