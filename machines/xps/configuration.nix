@@ -167,8 +167,15 @@ in
     ];
   };
 
+  hardware.bluetooth.enable = true;
+
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio = {
+    enable = true;
+    package = pkgs.pulseaudio.override {
+      bluetoothSupport = true;
+    };
+  };
 
   services.xserver.libinput = {
     enable = true;
