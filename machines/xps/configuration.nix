@@ -138,26 +138,19 @@ in
     font-awesome_4
   ];
 
-  services.xserver = {
+  programs.sway = {
     enable = true;
-    autorun = true;
 
-    displayManager.lightdm.enable = true;
-
-    desktopManager.xterm.enable = false;
-
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        dmenu
-        i3lock
-        i3status
-        jq
-        xdotool
-        xorg.xbacklight
-        xss-lock
-      ];
-    };
+    extraPackages = with pkgs; [
+      dmenu
+      i3status
+      jq
+      swayidle
+      swaylock
+      xwayland
+      xdotool
+      xorg.xrdb
+    ];
   };
 
   services.printing = {
@@ -176,33 +169,6 @@ in
       bluetoothSupport = true;
     };
   };
-
-  services.xserver.libinput = {
-    enable = true;
-    tapping = false;
-    clickMethod = "clickfinger";
-    naturalScrolling = true;
-  };
-
-  services.xserver.config = ''
-    # Internal keyboard has a right ctrl but no right win
-    # Swap them, because having a right win is more useful for i3
-    Section "InputClass"
-      Identifier "Internal Keyboard"
-      Driver "libinput"
-      MatchProduct "AT Translated Set 2 keyboard"
-      Option "XkbOptions" "ctrl:swap_rwin_rctl"
-    EndSection
-
-    # Workaround for broken middle mouse button
-    # Disable middle button 2 and use side button 9 in its place
-    Section "InputClass"
-      Identifier "Logitech G602"
-      Driver "libinput"
-      MatchUSBID "046d:c537"
-      Option "ButtonMapping" "1 0 3 4 5 6 7 8 2"
-    EndSection
-  '';
 
   users.mutableUsers = true;
   users.users.ben = {
