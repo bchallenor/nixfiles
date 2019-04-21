@@ -151,6 +151,10 @@ in
       xdotool
       xorg.xrdb
     ];
+
+    extraSessionCommands = ''
+      export _JAVA_AWT_WM_NONREPARENTING=1
+    '';
   };
 
   services.printing = {
