@@ -129,7 +129,9 @@ in
     zathura
     zip
   ]) ++ (with unstable.pkgs; [
-    jetbrains.idea-community
+    (jetbrains.idea-community.override {
+      jdk = openjdk11;
+    })
     (terraform.withPlugins(ps: with ps; [
       archive
       aws
