@@ -107,7 +107,10 @@ in
     jq
     libjpeg # jpegtran
     libxml2 # xmllint
-    openjdk8
+    (linkFarm "openjdk" [
+      { name = "lib/openjdk/8" ; path = openjdk8  + /lib/openjdk; }
+      { name = "lib/openjdk/11"; path = openjdk11 + /lib/openjdk; }
+    ])
     pass
     poppler_utils # pdfimages
     python3
