@@ -126,6 +126,7 @@ in
     watchexec
     xorg.xwininfo
     zathura
+    zip
   ]) ++ (with unstable.pkgs; [
     jetbrains.idea-community
     (terraform.withPlugins(ps: with ps; [
