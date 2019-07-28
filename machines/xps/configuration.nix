@@ -96,6 +96,7 @@ in
   environment.systemPackages = (with pkgs; [
     awscli
     chromium
+    diffoscope
     file
     firefox
     freerdp
