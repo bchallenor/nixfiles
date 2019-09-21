@@ -108,6 +108,7 @@ in
     img2pdf
     jq
     libjpeg # jpegtran
+    libreoffice
     libxml2 # xmllint
     (linkFarm "openjdk" [
       { name = "lib/openjdk/8" ; path = openjdk8  + /lib/openjdk; }
