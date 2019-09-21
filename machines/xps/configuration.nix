@@ -122,6 +122,7 @@ in
     rmlint
     rxvt_unicode
     shellcheck
+    skopeo
     sxiv
     unzip
     usbutils # lsusb
