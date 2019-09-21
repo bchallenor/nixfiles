@@ -98,6 +98,7 @@ in
     chromium
     diffoscope
     emacs
+    evince
     file
     firefox
     freerdp
