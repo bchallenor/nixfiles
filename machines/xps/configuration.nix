@@ -132,6 +132,7 @@ in
     vpnc
     watchexec
     xorg.xwininfo
+    xsv
     zathura
     zip
   ]) ++ (with unstable.pkgs; [
