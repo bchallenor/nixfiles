@@ -105,6 +105,7 @@ in
     gitAndTools.git-annex
     gnupg
     gptfdisk
+    graphviz
     imagemagick
     img2pdf
     jq
