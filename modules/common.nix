@@ -35,6 +35,7 @@
     strace
     tig
     tmux
+    traceroute
     tree
     vimHugeX
   ];
