@@ -118,6 +118,7 @@ in
     ])
     pass
     poppler_utils # pdfimages
+    pwgen
     python3
     python3.pkgs.black
     ranger
