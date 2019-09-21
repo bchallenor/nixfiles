@@ -122,6 +122,7 @@ in
     ranger
     rmlint
     rxvt_unicode
+    sbt
     shellcheck
     skopeo
     sxiv
