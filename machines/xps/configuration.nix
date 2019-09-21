@@ -97,6 +97,7 @@ in
     awscli
     chromium
     diffoscope
+    emacs
     file
     firefox
     freerdp
