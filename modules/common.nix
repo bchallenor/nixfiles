@@ -36,7 +36,7 @@
     tig
     tmux
     tree
-    vim
+    vimHugeX
   ];
 
   programs.bash.enableCompletion = true;
