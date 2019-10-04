@@ -150,6 +150,10 @@ in
 
   fonts.fonts = with pkgs; [
     iosevka
+    noto-fonts
+    noto-fonts-extra
+    noto-fonts-cjk
+    noto-fonts-emoji
     font-awesome_4
   ];
 
