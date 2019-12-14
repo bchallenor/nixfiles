@@ -121,6 +121,7 @@ in
     pwgen
     python3
     python3.pkgs.black
+    qrencode
     ranger
     rmlint
     rxvt_unicode
