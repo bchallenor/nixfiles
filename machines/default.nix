@@ -8,7 +8,7 @@ in {
   helios = buildMachineImage {
     inherit nixpkgs;
     machineName = "helios";
-    machineSize = 2048;
+    machineSize = 3072;
   };
 
   aegis = buildMachineImage {
@@ -26,6 +26,6 @@ in {
   jenkins = buildMachineImage {
     inherit nixpkgs;
     machineName = "jenkins";
-    machineSize = 2048;
+    machineSize = 3072;
   };
 }
