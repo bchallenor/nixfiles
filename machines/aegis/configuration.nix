@@ -86,6 +86,10 @@ in
         # xps
         allowedIPs = [ "fd00::2/128" ];
         publicKey = "FqhS4e0UeFFoctTXzww8G7g9qWOTvobttarIhc84jiE=";
+      } {
+        # tablet
+        allowedIPs = [ "fd00::3/128" ];
+        publicKey = "JJQPdHAaqPEQvCMn/vxtmcBQbRExyMwRHakDEdPzJTA=";
       }];
     };
   };
