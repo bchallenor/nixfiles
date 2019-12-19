@@ -19,6 +19,7 @@ in
 
   environment.systemPackages = (with pkgs; [
     awscli
+    ranger
   ]) ++ (with unstable.pkgs; [
     (terraform.withPlugins(ps: with ps; [
       archive
