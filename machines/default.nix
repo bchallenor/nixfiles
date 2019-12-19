@@ -5,6 +5,12 @@ let
   buildMachineImage = import ./build-machine-image.nix;
 
 in {
+  chaos = buildMachineImage {
+    inherit nixpkgs;
+    machineName = "chaos";
+    machineSize = 2048;
+  };
+
   helios = buildMachineImage {
     inherit nixpkgs;
     machineName = "helios";
