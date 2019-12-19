@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   unstable = import <nixpkgs-unstable> {};
@@ -20,6 +20,9 @@ in
     { device = "/dev/disk/by-label/jenkins";
       fsType = "ext4";
     };
+
+  boot.tmpOnTmpfs = lib.mkForce false;
+  boot.cleanTmpDir = true;
 
   nix.maxJobs = 2;
 
