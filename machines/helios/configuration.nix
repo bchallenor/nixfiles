@@ -9,14 +9,11 @@ in
     <nixpkgs/nixos/modules/profiles/headless.nix>
     ../../modules/common.nix
     ../../modules/ec2.nix
+    ../../modules/persistent-secrets.nix
+    ../../modules/persistent-home.nix
   ];
 
   networking.hostName = "helios";
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-label/nixos-home";
-      fsType = "ext4";
-    };
 
   nix.maxJobs = 2;
 
