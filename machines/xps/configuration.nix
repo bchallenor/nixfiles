@@ -207,7 +207,6 @@ in
     hashedPassword = "*";
     openssh.authorizedKeys.keyFiles = [
       ../../keys/tablet-blink.pub
-      ../../keys/phone-termux.pub
     ];
   };
   users.groups.ben = {
