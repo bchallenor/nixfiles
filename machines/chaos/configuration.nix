@@ -31,11 +31,11 @@ in
   ]);
 
   users.mutableUsers = false;
-  users.users.admin = {
+  users.users.ben = {
     uid = 1000;
-    group = "admin";
+    group = "ben";
     createHome = true;
-    home = "/home/admin";
+    home = "/home/ben";
     useDefaultShell = true;
     extraGroups = [
       "wheel"
@@ -46,7 +46,7 @@ in
       ../../keys/tablet-blink.pub
     ];
   };
-  users.groups.admin = {
+  users.groups.ben = {
     gid = 1000;
   };
 
