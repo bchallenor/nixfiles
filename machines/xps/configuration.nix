@@ -203,6 +203,7 @@ in
     useDefaultShell = true;
     extraGroups = [
       "wheel"
+      "dialout" # for /dev/ttyUSB0
     ];
     hashedPassword = "*";
     openssh.authorizedKeys.keyFiles = [
