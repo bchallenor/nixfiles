@@ -54,8 +54,8 @@
   services.nscd.enable = false;
 
   nix.nixPath = [
-    "nixpkgs=channel:nixos-${config.system.stateVersion}"
-    "nixpkgs-unstable=channel:nixos-unstable"
+    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+    "nixpkgs-unstable=/nix/var/nix/profiles/per-user/root/channels/nixos-unstable"
     "nixos-config=/etc/nixos/configuration.nix"
   ];
 
