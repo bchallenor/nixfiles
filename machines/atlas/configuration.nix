@@ -121,6 +121,8 @@ in
     '';
   };
 
+  networking.dhcpcd.enable = false;
+
   # DHCP server
   networking.firewall.allowedUDPPorts = [ 67 ];
 }

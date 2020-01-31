@@ -77,6 +77,8 @@ in
     };
   };
 
+  networking.dhcpcd.enable = false;
+
   networking.wireguard.interfaces = {
     wg0 = {
       ips = [ "fd00::1/64" ];

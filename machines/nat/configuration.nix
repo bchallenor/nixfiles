@@ -67,4 +67,6 @@
       };
     };
   };
+
+  networking.dhcpcd.enable = false;
 }
