@@ -89,7 +89,34 @@ in
 
   services.fstrim.enable = true;
 
-  networking.networkmanager.enable = true;
+  # - iwd for layer 2
+  # - networkd for layer 3
+  # - openresolv for nameservers
+  networking.wireless.iwd.enable = true;
+  systemd.network = {
+    enable = true;
+    networks = {
+      wlan = {
+        extraConfig = ''
+          [Match]
+          Type=wlan
+
+          [Network]
+          DHCP=ipv4
+
+          [DHCPv4]
+          UseRoutes=yes
+          UseDNS=no
+          UseHostname=no
+          UseNTP=no
+        '';
+      };
+    };
+  };
+  services.resolved.enable = false;
+  networking.dhcpcd.enable = false;
+  networking.resolvconf.enable = true;
+  networking.nameservers = [ "1.1.1.1" ];
 
   time.timeZone = "Europe/London";
 
