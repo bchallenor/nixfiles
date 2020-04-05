@@ -120,6 +120,11 @@ in
 
   time.timeZone = "Europe/London";
 
+  boot.kernel.sysctl = {
+    # Defaults to 8192. Each uses about 1kB.
+    "fs.inotify.max_user_watches" = 64 * 1024;
+  };
+
   environment.systemPackages = (with pkgs; [
     awscli
     chromium
