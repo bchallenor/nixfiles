@@ -125,6 +125,8 @@ in
     "fs.inotify.max_user_watches" = 64 * 1024;
   };
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   environment.systemPackages = (with pkgs; [
     awscli
     chromium
