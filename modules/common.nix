@@ -3,7 +3,7 @@
 {
   imports = [
     ./clone-nixos-config.nix
-    ./overlays.nix
+    ./base-packages.nix
   ];
 
   boot.tmpOnTmpfs = true;
@@ -19,26 +19,6 @@
     ];
     consoleFont = "ter-132n";
   };
-
-  environment.systemPackages = with pkgs; [
-    bind
-    git
-    htop
-    iotop
-    lsof
-    ncdu
-    pciutils
-    psmisc
-    ripgrep
-    rsync
-    stow
-    strace
-    tig
-    tmux
-    traceroute
-    tree
-    vimHugeX
-  ];
 
   programs.bash.enableCompletion = true;
 
