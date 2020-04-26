@@ -7,6 +7,7 @@
 
   environment.systemPackages = with pkgs; [
     bind
+    file
     git
     gnupg
     htop

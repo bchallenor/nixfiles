@@ -133,7 +133,6 @@ in
     diffoscope
     emacs
     evince
-    file
     firefox
     freerdp
     gitAndTools.git-annex
