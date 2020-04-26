@@ -10,4 +10,8 @@
 
   networking.wireless.enable = false;
   networking.wireless.iwd.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    nvme-cli
+  ];
 }
