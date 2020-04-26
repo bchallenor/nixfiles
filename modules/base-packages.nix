@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     bind
     git
+    gnupg
     htop
     iotop
     lsof
