@@ -10,6 +10,7 @@ in
     ../../modules/common.nix
     ../../modules/wireguard-unstable.nix
     ../../modules/redshift.nix
+    ../../services/gitea.nix
   ];
 
   networking.hostName = "xps";
