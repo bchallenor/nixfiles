@@ -15,6 +15,7 @@
     lsof
     ncdu
     pciutils
+    pinentry-curses
     psmisc
     ripgrep
     rsync
