@@ -25,6 +25,12 @@ in
     };
   boot.initrd.luks.reusePassphrases = false;
 
+  environment.etc."lvm/lvm.conf".text = ''
+    devices {
+      issue_discards = 1
+    }
+  '';
+
   fileSystems."/" =
     { device = "/dev/vg/nixos";
       fsType = "ext4";
