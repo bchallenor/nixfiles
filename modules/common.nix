@@ -14,10 +14,13 @@
       "en_GB.UTF-8/UTF-8"
       "en_US.UTF-8/UTF-8"
     ];
-    consolePackages = with pkgs; [
+  };
+
+  console = {
+    packages = with pkgs; [
       terminus_font
     ];
-    consoleFont = "ter-132n";
+    font = "ter-132n";
   };
 
   programs.bash.enableCompletion = true;
