@@ -135,6 +135,7 @@ in
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   environment.systemPackages = (with pkgs; [
+    alacritty
     awscli
     chromium
     diffoscope
