@@ -8,7 +8,7 @@ in
   imports = [
     ./hardware-configuration.nix
     ../../modules/common.nix
-    ../../modules/wireguard-unstable.nix
+    ../../modules/wireguard.nix
     ../../modules/redshift.nix
     ../../services/gitea.nix
   ];
