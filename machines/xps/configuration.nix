@@ -172,7 +172,6 @@ in
     sxiv
     unzip
     usbutils # lsusb
-    vpnc
     watchexec
     xorg.xwininfo
     xsv
