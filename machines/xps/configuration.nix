@@ -137,6 +137,7 @@ in
   environment.systemPackages = (with pkgs; [
     alacritty
     awscli
+    beancount
     chromium
     diffoscope
     emacs
