@@ -142,6 +142,7 @@ in
     diffoscope
     emacs
     evince
+    fava
     firefox
     freerdp
     gitAndTools.git-annex
