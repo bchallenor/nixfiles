@@ -159,6 +159,9 @@ in
       { name = "lib/openjdk/8" ; path = openjdk8  + /lib/openjdk; }
       { name = "lib/openjdk/11"; path = openjdk11 + /lib/openjdk; }
     ])
+    (maven.override {
+      jdk = openjdk11;
+    })
     pass
     poppler_utils # pdfimages
     pwgen
