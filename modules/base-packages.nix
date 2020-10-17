@@ -7,6 +7,7 @@
 
   environment.systemPackages = with pkgs; [
     bind
+    dos2unix
     file
     git
     gnupg
