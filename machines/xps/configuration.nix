@@ -213,6 +213,7 @@ in
       jq
       swayidle
       swaylock
+      wl-clipboard
       xwayland
       xdotool
       xorg.xrdb
