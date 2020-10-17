@@ -145,6 +145,7 @@ in
     fava
     firefox
     freerdp
+    fzf
     gitAndTools.git-annex
     gnupg
     gptfdisk
