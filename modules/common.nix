@@ -35,6 +35,7 @@
   programs.mosh.enable = true;
 
   services.nscd.enable = false;
+  system.nssModules = lib.mkForce [];
 
   nix.nixPath = [
     "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
