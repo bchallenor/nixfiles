@@ -15,6 +15,7 @@
     iotop
     lsof
     ncdu
+    nftables
     pciutils
     pinentry-curses
     psmisc
