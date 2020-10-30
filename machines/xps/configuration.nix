@@ -140,7 +140,7 @@ in
     beancount
     chromium
     diffoscope
-    emacs
+    emacs-nox
     evince
     fava
     firefox
