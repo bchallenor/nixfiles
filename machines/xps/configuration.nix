@@ -143,7 +143,7 @@ in
     emacs-nox
     evince
     fava
-    firefox
+    firefox-wayland
     freerdp
     fzf
     gitAndTools.git-annex
