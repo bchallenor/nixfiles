@@ -147,6 +147,7 @@ in
     freerdp
     fzf
     gitAndTools.git-annex
+    gitAndTools.git-filter-repo
     gnupg
     gptfdisk
     graphviz
